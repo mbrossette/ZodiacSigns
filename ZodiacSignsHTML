@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Astrological and Chinese Signs</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.2.min.js"></script>
+    <script src="mySignsScript.js"></script>
+	<meta name="description" content="This is fun.">
+
+</head>
+<body id="main">
+    <!---code below updating for HTML% using input instead of selected index -->
+<div id="wrap">
+	<div id="header"><h1>Find your Astrological and Chinese Zodiac Sign</h1></div>
+    </br>
+	<div>
+		<h2>Enter your Birthday Below:</h2>
+<form name = sign>	
+        <table align=center>
+            <tr>
+            <td></td>
+            <td>
+                <lable for="month" id="biggen">Month:</lable>
+                <input type="number" name=month min="1" max="12" step="1" pattern="{1,15}" title="loser" required>&nbsp; &nbsp; &nbsp;
+            </td>
+            <td></td>
+            <td>
+                <label for="day" id="biggen">Day:</label>
+                <input type="number" name=day id="day" min="1" max="31" step="1" required>&nbsp; &nbsp; &nbsp;
+            </td>
+            <td></td>
+            <td>
+                <label for="year" id="biggen">Year:</label>
+                <input type="number" name=year min="1920" max="2017" step="1" required />&nbsp; &nbsp; &nbsp;
+            </td>
+            </tr>	
+        </table>
+    </br>
+        <table align=center>
+            <tr>
+            <td><button type="button" onclick="signs()">Submit</button></td>
+                <td>&nbsp; &nbsp; &nbsp; &nbsp;</td>
+            <td><input type=Reset value="Clear Entry">
+            </td>
+            </tr>
+        </table>
+        </br></br>
+        <div id="main2"><img src="zodiac-signs3.gif"></img></div>
+</form>
+    </div>
+    
+</br>
+</br>	
+	<footer>
+        <hr>
+		This site was created with javascript and hand-coded love.
+	</footer>
+</div><!---end wrap-->
+</body>
+</html>
