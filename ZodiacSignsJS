@@ -1,0 +1,428 @@
+function signs() {
+
+	function returnSigns(){
+		var d = document.sign.day.value;
+
+		var m = document.sign.month.value;
+
+		var year = document.sign.year.value;
+
+		var bday;
+
+		var bdayGood;
+
+		var bdayBad;
+
+		var csign;
+
+		var csignInfo;
+
+		var symbol;
+
+		var chinese;
+        
+		
+		//using old school validation here until I can update with cross browser capable validation that is more user-friendly than provided by HTML5
+        
+        
+        //checking month
+        
+        // some browsers allow user to enter letters into type= number and some do not - checking for letters and symbols entered first
+        
+        if (isNaN(m)){
+
+		alert("You did not enter a proper month. It should be a number 1 - 12");
+
+		return false;
+
+		}
+        
+        //checking if it's 1 - 12
+        
+        if(m > 12 || m < 1){
+
+		alert("You did not enter a proper month. It should be 1 - 12.");
+
+		return false;
+
+		}
+        
+        
+        // checking if letters or symbols were entered for day
+        
+        if (isNaN(d)){
+
+		alert("You did not enter a proper day. It should be a number 1 - 31");
+
+		return false;
+
+		}
+        
+        // checking if 1 - 31
+        
+        if(d > 31 || d < 1){
+
+		alert("You did not enter a proper day. It should be 1 - 31.");
+
+		return false;
+
+		}
+        
+       //checking if letters or symbols were entered for year
+        
+        if (isNaN(year)){
+
+		alert("You did not enter a proper year. It should be 4-digit format.");
+
+		return false;
+
+		}
+        
+       
+        //checking if year is entered in a four digit format
+        
+		if(year.length > 4 || year.length < 4){
+
+		alert("You did not enter a proper year. It should be 4-digit format.");
+
+		return false;
+
+		}
+
+
+
+		
+     // if month and day is a number then check month and day ranges for astrological sign   
+     //if month and day are not entered correctly we do not want to run calculations
+		
+	if(!isNaN(m) && !isNaN(d)){
+		
+		if ((m==3 && d >= 21) || (m == 4 && d <= 19)){
+
+        bday = "Aries";
+
+		bdayGood = "You are adventurous, pioneering, enthusiastic, energetic, & confident.";
+
+		bdayBad = "You are a Ram. And will butt your head until you get what you want.";
+
+		symbol = "ariestat.jpg";
+      
+		}
+		 else if ((m == 4 && d >= 20) || (m == 5 && d <= 20))
+
+        {
+
+		bday = "Taurus";
+
+		bdayGood = "You are ambitious, reliable & patient.";
+
+	    bdayBad = "But, you are all Bull. Which makes you jealous, inflexible & stubborn.";
+
+		symbol = "taurustat.jpg";	     
+
+        }
+		
+		else if ((m == 5 && d >= 21) || (m == 6 && d <= 21))
+
+        {
+
+        bday = "Gemini";
+
+		bdayGood = "Known as the twins. Your good twin is communicative, lively, & witty."; 
+
+		bdayBad = "But the evil twin in you is often malicious, nervous & cunning.";
+
+		symbol = "geminitat.jpg";              
+
+        }
+   
+        else if ((m == 6 && d >= 22) || (m == 7 && d <= 22))
+
+        {
+
+        bday = "Cancer";
+
+		bdayGood = "You tend to be kind, emotional, romantic, & imaginative.";
+
+		bdayBad = "But the crab in you is prone to moodiness, hypersensitivity, and depression.";
+
+		symbol = "cancertat.jpg";     
+
+        }
+
+
+        else if ((m == 7 && d >= 23) || (m== 8 && d <= 22))
+
+        {
+
+        bday = "Leo";
+
+		bdayGood = "You are the Lion and with this you are proud, generous, & warm-hearted.";
+
+		bdayBad = "But you are also snobbish & intolerant.";
+
+		symbol = "leotat.jpg";
+
+        }
+
+        else if ((m == 8 && d >= 23) || (m== 9 && d <= 22))
+
+         {
+
+        bday = "Virgo";
+
+		bdayGood = "Ah, the virgin. You are modest, diligent, orderly, self-sufficient, & intellectual."; 		
+
+  		bdayBad = "But there are many reasons for a Virgo to be considered the symbol of the virgin. You are often harsh, critical, cold, & fussy.";
+
+		symbol = "virgotat.jpg";
+
+        }
+
+
+        else if ((m == 9 && d >= 23) || (m== 10 && d <= 23))
+
+         {
+
+        bday = "Libra";
+
+		bdayGood = "You are charming, pleasant, idealistic, & refined.";
+
+		bdayBad = "The libra carries the symbol of the scales, but justice may not be the only thing being weighed. You are often indecisive, deceitful & insecure.";
+
+		symbol = "libratat.jpg";
+
+        }
+
+
+        else if ((m == 10 && d >= 24) || (m== 11 && d <= 21))
+
+         {
+
+         bday = "Scorpio";
+
+		 bdayGood = "Scorpions know themselves well. You are a complex, emotional, determined, & hypnotic person."; 
+
+		 bdayBad = "But get too close and the scorpion will sting with fits of jealousy & possessiveness.";
+
+		 symbol = "scorpiotat.jpg";
+
+        }
+
+
+        else if ((m == 11 && d >= 22) || (m== 12 && d <= 21))
+
+         {
+
+          bday = "Sagittarius";
+
+		  bdayGood ="You are an ethical, humorous, open-hearted, & compassionate person."; 
+
+		  bdayBad = "But beware the archer in you that aims too high. This makes you prideful, foolish, impulsive and impracitcal.";
+
+		  symbol = "sagittariustat.jpg";
+
+
+        }
+
+
+        else if ((m == 12 && d >= 22) || (m== 1 && d <= 19))
+
+         {
+
+          bday = "Capricorn";
+
+		  bdayGood = "You are ambitious, patient, responsible, & stable.";
+
+		  bdayBad = "But you are an old seagoat that tends to portray coldness, rigidity, materialism, and dullness.";
+
+		  symbol = "capricorntat.jpg";   
+
+        }
+
+
+        else if ((m == 1 && d >= 20) || (m== 2 && d <= 18))
+
+         {
+
+         bday = "Aquarius";
+
+		 bdayGood = "You are creative, challenging, entertaining, stimulating, & independent.";
+
+		 bdayBad = "You are the water bearer and can drown those near to you with coldness, cowardice & impracticality.";
+
+		 symbol = "aquariustat.jpg";
+
+        }
+
+
+        else if ((m == 2 && d >= 19) || (m== 3 && d <= 20))
+
+         {
+
+          bday = "Pisces";
+
+		  bdayGood = "You are dreamy, romantic, generous, & affectionate."; 
+
+		  bdayBad = "But you are a fish that never knows which way to swim. You tend to exaggerate, express paranoia, & exteme fickleness.";
+
+		  symbol = "piscestat.jpg";
+        }
+
+    }
+        
+    // here we want to take the modulus of the year entered to get the Chinese zodiac sign. Chinese zodiac runs on a 12 year cycle    
+	// recheck year entry is a number before continuing	
+	if(!isNaN(year)){
+        switch (year % 12 )
+
+	{
+
+	case 4: 
+
+		csign = "Rat"; 
+
+		csignInfo = "You are imaginative, charming, and truly generous to the person you love. However, you have a tendency to be quick-tempered and overly critical. Born under this sign, you should be happy in sales or as a writer, critic, or publicist.";
+
+		chinese = "zodiacrat.gif";
+
+        break; 
+
+       
+
+	case 5:  
+
+        
+
+        csign = " Ox";
+
+		csignInfo = "A born leader, you inspire confidence from all around you. You are conservative methodical, and good with your hands. Guard against being chauvinistic and always demanding your own way. The Buffalo would be successful as a skilled surgeon, general, or hairdresser.";
+
+		chinese = "zodiacox.gif";
+
+         break; 
+
+       
+
+       
+
+	case 6: 
+
+        csign = " Tiger";
+
+		csignInfo = "You are sensitive, emotional, and capable of great love. However, you have a tendency to get carried away and be stubborn about what you think is right, often seen as a 'Hothead' or rebel. Your sign shows you would be excellent as a boss, explorer, race car driver, or matador.";
+
+		chinese = "zodiactiger.gif";
+
+        break; 
+
+	case 7: 
+
+        csign = "Rabbit";
+
+		csignInfo = "You are the kind of person, that people like to be around: affectionate, obliging, always pleasant. You have a tendency, though, to get too sentimental and seem superficial. Being cautious and conservative, you are successful in business but would also make a good lawyer, diplomat, or actor.";
+
+		chinese = "zodiacrabbit.gif";
+
+         break; 
+
+	case 8:
+
+		csign = "Dragon"; 
+
+		csignInfo = "Full of vitality and enthusiasm, the Dragon is a popular individual even with the reputation of being foolhardy and a 'big mouth' at times. You are intelligent, gifted, and a perfectionist but these qualities make you unduly demanding on others. You would be well-suited to be an artist, priest, or politician.";
+
+		chinese = "zodiacdragon.gif";
+
+         break; 
+
+	case 9: 
+
+		csign = "Snake";
+
+		csignInfo = "Rich in wisdom and charm, you are romantic and deep thinking and your intuition guides you strongly. Avoid procrastination and your stingy attitude towards money. Keep your sense of humor about life. The Snake would be most content as a teacher, philosopher, writer, psychiatrist, and fortune teller.";
+
+		chinese = "zodiacsnake.gif";
+
+         break; 
+
+	case 10:
+
+        csign = "Horse";
+
+		csignInfo = "Your capacity for hard work is amazing. While intelligent and friendly, you have a strong streak of selfishness and sharp cunning and should guard against being egotistical. Your sign suggests success as an adventurer, scientist, poet, or politician.";
+
+		chinese = "zodiachorse.gif";
+
+          break; 
+
+	case 11:
+
+		csign = "Ram";
+
+		csignInfo = "Except for the knack of always getting off on the wrong foot with people, the Goat can be charming company. You're elegant and artistic but the first to complain about things. Put aside your pessimism and worry and try to be less dependent on material comforts. You would be best as an actor, gardener, or beachcomber.";
+
+		chinese = "zodiacgoat.gif";
+
+         break; 
+
+	case 0:
+
+		csign = "Monkey";
+
+		csignInfo = "You are a very intelligent and a very clever wit. Because of your extraordinary nature and magnetic personality, you are always well-liked. The Monkey, however, must guard against being an opportunist and distrustful of other people. Your sign promises success in any field you try.";
+
+		chinese = "zodiacmonkey.gif";
+
+         break; 
+
+	case 1:
+
+		csign = "Rooster";
+
+		csignInfo = "The Rooster is a hard worker; shrewd and definite in decision making often speaking his mind. Because of this, you tend to seem boastful to others. You are a dreamer, flashy dresser, and extravagant to an extreme. Born under this sign you should be happy as a restaurant owner, publicist, soldier or world traveler.";
+
+		chinese = "zodiacrooster.gif";
+
+         break; 
+
+	case 2:
+
+		csign = "Dog";
+
+		csignInfo = "The Dog will never let you down. Born under this sign you are honest, and faithful to those you love. You are plagued by constant worry, a sharp tongue, and a tendency to be a fault finder. You would make an excellent businessman, activist, teacher, or secret agent.";
+
+		chinese = "zodiacdog.gif";
+
+         break; 
+
+	case 3: 
+
+		csign = "Pig";
+
+		csignInfo = "You are a splendid companion, an intellectual with a very strong need to set difficult goals and carry them out. You are sincere, tolerant, and honest but by expecting the same from others, you are incredibly naive. Your quest for material goods could be your downfall. The Pig would be best in the arts as an entertainer.";
+
+		chinese = "zodiacpig.gif";
+
+         break; 
+
+	}
+	}
+        // print out astrological and chinese signs
+        
+		message = "<p><br><span id=biggen><b>The Birthday you entered is:</b></span><br><br><span id=biggen>" + m +" &nbsp;/ &nbsp;"+ d + "&nbsp; / &nbsp;"  + year + "</span><br><br><br>";
+
+		message += "<br><span id=biggen><b>Your Astrological Sign:</b></span><br><br><span id=biggen>" + bday + "</span><br><br>" + "<img src = "  + symbol + "> " + "<br><br>" + bdayGood + "<br />" + bdayBad + "<br><br></td></tr>";
+
+		message += "<br><span id=biggen><b> Chinese Year:</b></span><br><br><span id=biggen>"+ csign + "</span><br><br> " + "<img src = " + chinese + ">" + "<br><br>" + csignInfo + "<br> <br></p>";
+		
+        //jquery used due to innerHTML not always working cross browser
+		var msg = message;
+		return msg;
+		}
+		
+			var message = returnSigns();
+			if(message != false){
+			$('#main2').html(message);
+			}else{ return true;}
+}
