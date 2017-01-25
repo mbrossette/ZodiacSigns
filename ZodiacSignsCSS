@@ -1,0 +1,70 @@
+	body,
+	html {
+		margin:0;
+		padding:0;
+		color:#000;
+		text-align:center;
+		font: 90% arial, helvetica, sans-serif;
+		margin-left:auto;
+		margin-right:auto;
+		background : url("starbckgrnd.gif"); 
+		
+	}
+	/* wrapping the form */
+	#wrap {
+		width:1250px;
+		margin:0 auto;
+        float:center;
+		background:#ffffff;
+	}
+
+	#header {
+    	padding:35px 40px;
+		background-color:#ffffff;
+	}
+
+	h1 {
+	    margin:0;
+    }
+
+    /* changing size of input boxes for numbers */
+    input[type=number]{
+    width: 55px;
+    } 
+
+    /* enlarge the font size for labels */
+    #biggen{
+            font-size: 20px;
+        }
+
+	#main {
+		float:center;
+		width:1250px;
+		padding:10px;
+		margin:0 auto;
+		font-weight:bold;
+        text-align: center;
+		background-color:#ffffff;
+	}
+
+	#main2 {
+        float:center;
+		width:1050px;
+		padding:20px;
+		margin:0 auto;
+		background-color:#ffffff;
+	}
+
+	h2 {
+		margin:0 0 1em;
+		font-weight:bold;
+	}
+	
+	footer {
+		clear:both;
+        height: 500px;
+		padding:5px 10px;
+		background-color:#ffffff;
+	}
+	
+
